@@ -5,244 +5,230 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testimonial Slider</title>
+  <title>Sample HTML Code - NewsLetter Form</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
     body {
-      color: #000;
-      font-family: 'Nunito', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 3rem 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 1rem;
+      color: white;
+      background-color: #ff7a7a;
     }
 
-    .testimonial {
-      height: 100%;
+    main {
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .intro {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-bottom: 5rem;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 3rem;
     }
 
-    h1 {
-      margin: 20px 0;
+    .title {
+      padding: 1rem;
+      font-size: 1.75rem;
     }
 
-    .line {
-      height: 2px;
-      width: 6rem;
-      background-color: #e26c4f;
-      margin-bottom: calc(3rem + 2vmin);
-    }
-
-    .arrow-wrapper {
-      position: relative;
-      width: 70%;
-      border-radius: 2rem;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      overflow: hidden;
-      place-items: center;
-    }
-
-    .review-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: calc(2rem + 1vmin);
+    .sign-up {
       width: 100%;
     }
 
-    #imgBox {
-      border-radius: 50%;
-      width: calc(6rem + 4vmin);
-      height: calc(6rem + 4vmin);
-      position: relative;
-      box-shadow: 5px -3px #e26c4f;
-      background-size: cover;
-      margin-bottom: calc(0.7rem + 0.5vmin);
-    }
-
-    #name {
-      margin-bottom: calc(0.7rem + 0.5vmin);
-      font-size: calc(1rem + 0.5vmin);
-      letter-spacing: calc(0.1rem + 0.1vmin);
-      font-weight: bold;
-    }
-
-    #profession {
-      font-size: calc(0.8rem + 0.3vmin);
-      margin-bottom: calc(0.7rem + 0.5vmin);
-      color: #e26c4f;
-    }
-
-    #description {
-      font-size: calc(0.8rem + 0.3vmin);
-      width: 70%;
-      max-width: 40rem;
+    .sign-up-para {
+      padding: 1rem 5rem;
+      margin-bottom: 1.75rem;
+      border-radius: 0.8rem;
+      box-shadow: 0 8px 0px rgba(0 0 0/0.15);
+      background-color: #7138cc;
       text-align: center;
-      margin-bottom: calc(1.4rem + 1vmin);
-      color: rgb(92, 92, 92);
-      line-height: 2rem;
     }
 
-    .arrow {
-      width: calc(1.4rem + 0.6vmin);
-      height: calc(1.4rem + 0.6vmin);
-      border: solid #e26c4f;
-      border-width: 0 calc(0.5rem + 0.2vmin) calc(0.5rem + 0.2vmin) 0;
+    .sign-up-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.2rem;
+      border-radius: 0.8rem;
+      box-shadow: 0 8px 0px rgba(0 0 0/0.15);
+      color: #b9b6d3;
+      background-color: white;
+    }
+
+    .form-input {
+      width: 100%;
+      margin-bottom: 1em;
+      position: relative;
+    }
+
+    .form-input span {
+      position: absolute;
+      top: 10%;
+      right: 0;
+      padding: 0 0.65em;
+      border-radius: 50%;
+      background-color: #ff7a7a;
+      color: white;
+      display: none;
+    }
+
+    .form-input.warning span {
+      display: inline-block;
+    }
+
+    .form-input input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 2px solid rgba(185, 182, 211, 0.25);
+      border-radius: 0.5em;
+      font-weight: 600;
+      color: #3e3c49;
+    }
+
+    .form-input input:focus {
+      outline: none;
+      border: 2px solid #b9b6d3;
+    }
+
+    .form-input.warning input {
+      border: 2px solid #ff7a7a;
+    }
+
+    .form-input p {
+      margin: 0.2em 0.75em 0 0;
+      display: none;
+      font-size: 0.75rem;
+      text-align: right;
+      font-style: italic;
+      color: #ff7a7a;
+    }
+
+    .form-input.warning p {
+      display: block;
+    }
+
+    .submit-btn {
       cursor: pointer;
-      transition: transform 0.3s;
+      width: 100%;
+      padding: 1em;
+      margin-bottom: 1em;
+      border: none;
+      border-bottom: 5px solid #31bf81;
+      border-radius: 0.5em;
+      background-color: #38cc8c;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
-    .arrow:hover {
-      transition: 0.3s;
-      transform: scale(1.15);
+    .submit-btn:hover {
+      background-color: #5dd5a1;
     }
 
-    .left-arrow-wrap {
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      transform: rotate(135deg);
+    .form-term {
+      margin-bottom: 0.75em;
+      font-size: 0.8rem;
+      text-align: center;
     }
 
-    .right-arrow-wrap {
-      position: absolute;
-      top: 50%;
-      right: 5%;
-      transform: rotate(-45deg);
+    .form-term span {
+      font-weight: 700;
+      color: #ff7a7a;
     }
+    
+    @media (min-width: 768px) {
+      body {
+        align-items: center;
+        min-height: 100vh;
+      }
 
-    @media screen and (max-width: 900px) {
-      .testimonial {
-        width: 100%;
+      main {
+        max-width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .intro {
+        align-items: flex-start;
+        text-align: left;
+        width: 45%;
+        margin-right: 1rem;
+      }
+
+      .title {
+        padding: 0;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        line-height: 1.25em;
+      }
+
+      .sign-up {
+        width: 45%;
+      }
+
+      .sign-up-form {
+        padding: 1.75rem;
+      }
+
+      .sign-up-form input {
+        padding-left: 1.5em;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="testimonial">
-    <h1>Our Reviews</h1>
-    <div class="line"></div>
-    <!-- arrow wrapper contains the review and the arrows -->
-    <div class="arrow-wrapper">
-      <!-- review section -->
-      <div id="reviewWrap" class="review-wrap">
-        <div id="imgBox"></div>
-        <div id="name"></div>
-        <div id="profession"></div>
-        <div id="description"></div>
-      </div>
-      <!-- left arrow -->
-      <div class="left-arrow-wrap">
-        <div class="arrow"></div>
-      </div>
-      <!-- right arrow -->
-      <div class="right-arrow-wrap">
-        <div class="arrow"></div>
-      </div>
-    </div>
-  </div>
+  <main>
+    <!-- intro section -->
+    <section class="intro">
+      <h1 class="title">Black Friday Deals</h1>
+      <p>Get up to 50% off on all our products and services. Hurry up, the offer ends in 24 hours.</p>
+    </section>
 
-  <script>
-    const reviewWrap = document.getElementById("reviewWrap");
-    const leftArrow = document.querySelector(".left-arrow-wrap .arrow");
-    const rightArrow = document.querySelector(".right-arrow-wrap .arrow");
-    const imgBox = document.getElementById("imgBox");
-    const name = document.getElementById("name");
-    const profession = document.getElementById("profession");
-    const description = document.getElementById("description");
+    <!-- sign-up section -->
+    <section class="sign-up">
+      <p class="sign-up-para">Sign up for our newsletter and get 10% off your first purchase</p>
+      <!-- the form itself -->
+      <form class="sign-up-form">
+        <div class="form-input">
+          <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+          <span>!</span>
+          <p class="warning">First name cannot be empty</p>
+        </div>
 
-    let people = [{
-        photo: 'url("https://cdn.pixabay.com/photo/2015/03/03/18/58/woman-657753_960_720.jpg")',
-        name: "Natalie Grey",
-        profession: "Software Engineer",
-        description: "While the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me:"
-      },
-      {
-        photo: "url('https://cdn.pixabay.com/photo/2018/06/27/07/45/college-student-3500990_960_720.jpg')",
-        name: "Dylan Smith",
-        profession: "Student",
-        description: "I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed. Bitters hashtag tumeric sriracha hot chicken gentrify portland. Dreamcatcher neutra irony."
-      },
-      {
-        photo: "url('https://cdn.pixabay.com/photo/2015/01/08/18/30/man-593372__340.jpg')",
-        name: "Branson Cook",
-        profession: "Web Developer",
-        description: "Hello, I'm a web developer. I have been working as a web developer for 5 years. I have worked in many companies and I have worked as a freelancer. I have worked in a team and I have worked alone. I have worked in a big company and I have worked in a small one."
-      },
-      {
-        photo: "url('https://cdn.pixabay.com/photo/2012/10/26/02/12/actor-63082_960_720.jpg')",
-        name: "Julius Grohn",
-        profession: "Designer",
-        description: "Working as a designer is a very interesting job. You can work in a team or alone, you can work in a company or as a freelancer. You can work in an office or at home. You can work in a big company or in a small one. You can work in a big city or in a small town."
-      }
-    ];
+        <div class="form-input">
+          <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+          <span>!</span>
+          <p class="warning">Last name cannot be empty</p>
+        </div>
 
-    // set the first person
-    imgBox.style.backgroundImage = people[0].photo;
-    name.innerText = people[0].name;
-    profession.innerText = people[0].profession;
-    description.innerText = people[0].description;
-    let currentPerson = 0;
+        <div class="form-input">
+          <input type="email" name="email" id="email" placeholder="Email Address" required>
+          <span>!</span>
+          <p class="warning">Looks like this is not an email</p>
+        </div>
 
-    //Select the side where you want to slide
-    function slide(side, personNumber) {
-      let reviewWrapWidth = reviewWrap.offsetWidth + "px";
-      let descriptionHeight = description.offsetHeight + "px";
-      //(+ or -)
-      let side1symbol = side === "left" ? "" : "-";
-      let side2symbol = side === "left" ? "-" : "";
+        <div class="form-input">
+          <input type="Password" name="Password" id="Password" placeholder="Password" required>
+          <span>!</span>
+          <p class="warning">Password cannot be empty</p>
+        </div>
 
-      setTimeout(() => {
-        imgBox.style.backgroundImage = people[personNumber].photo;
-      }, 0);
-      setTimeout(() => {
-        description.style.height = descriptionHeight;
-      }, 100);
-      setTimeout(() => {
-        name.innerText = people[personNumber].name;
-      }, 200);
-      setTimeout(() => {
-        profession.innerText = people[personNumber].profession;
-      }, 300);
-      setTimeout(() => {
-        description.innerText = people[personNumber].description;
-      }, 400);
-    }
-
-    function setNextCardLeft() {
-      if (currentPerson === 3) {
-        currentPerson = 0;
-        slide("left", currentPerson);
-      } else {
-        currentPerson++;
-      }
-
-      slide("left", currentPerson);
-    }
-
-    function setNextCardRight() {
-      if (currentPerson === 0) {
-        currentPerson = 3;
-        slide("right", currentPerson);
-      } else {
-        currentPerson--;
-      }
-
-      slide("right", currentPerson);
-    }
-
-    leftArrow.addEventListener("click", setNextCardLeft);
-    rightArrow.addEventListener("click", setNextCardRight);
-  </script>
+        <input class="submit-btn" type="submit" value="Claim your offer">
+        <p class="form-term">By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>
